@@ -14,20 +14,9 @@ const MyRoutes =()=> {
       <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/needy' element={<Needy/>}/>
         <Route path='/dashboard' element={
           <ProtectedRoutes>
             <Dashboard/>
-          </ProtectedRoutes>
-        }/>
-        <Route path='/resources' element={
-          <ProtectedRoutes>
-            <Resources/>
-          </ProtectedRoutes>
-        }/>
-        <Route path='/allotment-table' element={
-          <ProtectedRoutes>
-            <Allotment/>
           </ProtectedRoutes>
         }/>
       </Routes>
