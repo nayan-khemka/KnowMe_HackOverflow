@@ -1,0 +1,30 @@
+.actionMenu{
+    background-color: #3A5998 !important;
+    padding: 5px 16px !important;
+    width: 157px;
+    
+}
+
+.itemDropdown{
+    font-size: 15px;
+    font-weight: 200 !important;
+    color: white !important;
+    background-color: #3A5998 !important;
+}
+.itemDropdown:hover{
+    color: blue !important;
+}
+
+#dropdown-basic{
+    border: none;
+    font-weight: bold !important;
+}
+
+#dropdown-basic::after{
+    display: none;
+    border: none;
+}
+
+#dropdown-basic:hover{
+    border: none;
+}

@@ -1,0 +1,12 @@
+.navbar{
+    padding: 10px 30px !important;
+    /* background-color: #3A5997 !important; */
+    position: fixed !important;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    z-index: 3;
+    height: 61px;
+}
+
+

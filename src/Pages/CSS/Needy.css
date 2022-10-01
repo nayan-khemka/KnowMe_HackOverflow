@@ -1,0 +1,45 @@
+.needyForm{
+ margin: auto;
+ /* text-align: center; */
+    
+}
+
+.btn-needy{
+    padding: 15px 30px !important;
+
+}
+
+#demo{
+    border: 1px solid black;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 650;
+    height: 45px;
+}
+
+.errormessage{
+    font-size: 12px;
+    float: left;
+}
+
+.edit-field{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.jobDes{
+    display: block;
+}
+
+#textArea{
+    height: 100px;
+    padding: 12px;
+}
+
+.needyFooter{
+    background-color: #3A5998;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    top: 200px;
+}

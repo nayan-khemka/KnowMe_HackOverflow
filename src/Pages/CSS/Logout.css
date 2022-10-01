@@ -1,0 +1,17 @@
+.item-dropdown:hover{
+    background-color: #3A5998 !important;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.item-dropdown{
+    height: 44.891px !important;
+    padding: 4px !important;
+}
+
+.menu-dropdown{
+    padding: 0 !important;
+    height: 44.891px !important;
+    text-align: center !important;
+}
+
