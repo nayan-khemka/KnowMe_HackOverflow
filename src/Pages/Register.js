@@ -93,7 +93,7 @@ function Register(props) {
               <div className='row'>
                 <div className='mb-sm-3 mb-lg-4 col-sm-12 col-12'>
                   <button className="button" type='submit'><span>SignUp</span></button>
-                  <a className="button" href='http://localhost:3000/'><span>SignIn</span></a>
+                  <a className="button" href='http://127.0.0.1:3000/'><span>SignIn</span></a>
                 </div>  
               </div>                         
             </Form>

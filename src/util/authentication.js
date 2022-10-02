@@ -1,6 +1,8 @@
 import React from "react";
 
     const createToken = (data) => {
+        console.log(data.apiKey);
+        console.log(data.username);
         localStorage.username = data.username;
         localStorage.apiKey = data.apiKey;
     }
