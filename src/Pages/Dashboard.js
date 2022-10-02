@@ -28,7 +28,7 @@ const Dashboard = () => {
     })
       .then((res => {
         setGetData(res.data.data);
-        setIsShown(true);
+        setIsShown(Object.keys(res.data.data).length !== 0);
       }))
 
     if (isSubmit){
@@ -40,7 +40,8 @@ const Dashboard = () => {
         console.log("token is: "+res.data.data)
         // createToken(res.data.data)
         if(checkAuthentication()){
-          navigate('/dashboard', {replace: true})
+          window.location.reload();
+          // navigate('/dashboard', {replace: true})
         }
       })
     }
@@ -54,7 +55,8 @@ const Dashboard = () => {
         // console.log("token is: "+res.data.data)
         // createToken(res.data.data)
         if(checkAuthentication()){
-          navigate('/dashboard', {replace: true})
+          window.location.reload();
+          // navigate('/dashboard', {replace: true})
         }
       })
     }
