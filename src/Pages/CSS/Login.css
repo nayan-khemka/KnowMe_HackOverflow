@@ -126,7 +126,8 @@ input, textarea{
   width: 180px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  position: relative;
+  top: 1%;
 }
 
 .button span {

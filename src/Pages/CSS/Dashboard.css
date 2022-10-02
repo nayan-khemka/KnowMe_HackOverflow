@@ -49,12 +49,17 @@ button{
     background: transparent;
     outline: none;
     border: 2px solid black;
-    border-radius: 20px;
-    color: black;
+    border-radius: 300px;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    color: black;
+    
+    /* color: black; */
+    background-color: #1f1414;
+    position: fixed;
+    top: 45%;
+    right: 10%;
 }
 
 .container{
@@ -102,7 +107,8 @@ button{
     font-size: 20px;
     font-family: 'Exo 2', sans-serif;
     position: relative;
-    left: 130px;
+    left: 838px;
+    background-color: #1f1414;
 }
 
 ::placeholder{
@@ -116,39 +122,28 @@ button{
 .form-1{
     border-radius: 10px;
     border: 5px solid black;
-    height: 30%;
+    min-height: 30%;
     width: 35%;
     position: fixed;
     right: 38%;
     top: 39%;
-    /* padding: 10px; */
-    /* background-color: white; */
     align-items: center;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
-    /* background-color: bisque; */
     text-align: center;
-    /* width: 365px; */
 	padding: 45px;
 	background: #1f1414;
-	/* margin-left: 50%; */
-	/* margin-top: vh; */
-    /* margin-top: calc(var(--vh, 1vh) * 50); */
-	box-shadow: 0 7px 15px #000;
-	/* transform: translate(-50%, -50%); */
-	/* display: none; */
+    box-shadow: 0 7px 15px #000;
 	z-index: 4;
     color: #fff;
-
-
 }
-
-
-	
-	
 
 .form-1 button{
     margin-top: 6%;
+    position: relative;
+    left: 3%;
+    background-color: burlywood;
+    color: black;
     /* color: #fff; */
 }
 
@@ -157,3 +152,23 @@ button{
     font-size: 55px;
     /* line-height: 2px; 
 }*/
+
+#verify{
+    position: relative;
+    top: 8px;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 2px solid white;
+    /* align-items: center; */
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    /* text-align: center; */
+	padding: 5px;
+	background: white;
+    box-shadow: 0 7px 15px #000;
+	z-index: 4;
+    color: black;
+    margin: 10px;
+} 
+
+
