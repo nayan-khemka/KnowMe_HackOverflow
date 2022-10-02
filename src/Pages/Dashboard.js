@@ -11,25 +11,33 @@ import { Navigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [shown, setShown] = useState(false);
-
-  const [response, setResponse] = useState(true)
+  const [isShown, setIsShown] =useState(false);
+  const [getData, setGetData] = useState()
   const [isSubmit, setIsSubmit] = useState(false);
   const [postData, setPostData]= useState()
   let navigate= useNavigate();
   const loggedIn = checkAuthentication();
 
   useEffect(()=>{
+    axios.post('http://172.20.10.2:8080/get/', {
+      username:localStorage.username,
+      apiKey:localStorage.apiKey,
+    })
+      .then((res => {
+        setGetData(res.data.data);
+        setIsShown(true);
+      }))
+
     if (isSubmit){
-      axios.post('http://172.20.10.2:8080/add/aadhar', postData)
+      postData['username']=localStorage.username
+      postData['apiKey']= localStorage.apiKey
+      axios.post('http://172.20.10.2:8080/add/aadhaar/', postData)
       .then((res)=> {
         console.log(res);
         console.log("token is: "+res.data.data)
-        createToken(res.data.data)
+        // createToken(res.data.data)
         if(checkAuthentication()){
           navigate('/dashboard', {replace: true})
-        }
-        else {
-          setResponse(false)
         }
       })
     }
@@ -37,12 +45,7 @@ const Dashboard = () => {
 
   console.log(postData)
 
-  const handleLogout = () => {
-    clearToken();
-    if(!checkAuthentication()){
-      navigate(0, {replace: true})
-    }
-  }
+  
 
   // console.log(paginatedData);
 
@@ -52,7 +55,7 @@ const Dashboard = () => {
       <div className="navbar">
         <img src={logo} className="logo" />
         <div className="user">
-          <button type="button" onClick={handleLogout()}>Logout</button>
+          {/* <button type="button" onClick={clearToken()}>Logout</button> */}
           <img src="" />
         </div>
       </div>
@@ -63,12 +66,23 @@ const Dashboard = () => {
           <button onClick={()=>setShown(true)}>Add an ID</button>
         </div>
       </div>
+      {
+        isShown && (
+          <div className='form-1 form-2'>
+            {console.log(getData['aadhaar'])}
+            Number : {getData['aadhaar'].number} <br/>
+            Name : {getData['aadhaar'].name} <br/>
+            Gender : {getData['aadhaar'].gender} <br/>
+            Verified : {getData['aadhaar'].isVerified ? '✔' : '❌'} <br/>
+          </div>
+        )
+      }
       {shown && (
       <Formik
-      initialValues={{aadharNumber:""}}
+      initialValues={{aadhaarNumber:""}}
       validationSchema = {
         Yup.object({
-          aadharNumber : Yup.string()
+          aadhaarNumber : Yup.string()
                 .required("Required")
                 .matches(
                   /^[0-9]{12}$/ ,
@@ -88,9 +102,9 @@ const Dashboard = () => {
             <div className='form-1'>
             <Form id='form'> 
             <div className='form-group mt-2'>
-                      <Field name="aadharNumber" className="form-control red" placeholder="Enter aadharNumber"></Field>
+                      <Field name="aadhaarNumber" className="form-control red" placeholder="Enter aadhaarNumber"></Field>
                       <div className='errormessage' style={{ color: "red" }} >
-                      <ErrorMessage name="aadharNumber" className='error' /></div>
+                      <ErrorMessage name="aadhaarNumber" className='error' /></div>
                     </div>
                     <button className="button" type='submit'><span>Submit</span></button>
       </Form>
